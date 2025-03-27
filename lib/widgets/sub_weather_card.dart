@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/utils/extension.dart';
-import 'package:weather_app/widgets/info_weather_row.dart';
+import 'package:weather_app/widgets/widgets.dart';
 
 class SubWeatherCard extends StatelessWidget {
   const SubWeatherCard({super.key});

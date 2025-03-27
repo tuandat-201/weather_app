@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:weather_app/utils/extension.dart';
-import 'package:weather_app/widgets/hourly_forecast_tile.dart';
+import 'package:weather_app/widgets/widgets.dart';
 
 class HourlyForecast extends StatelessWidget {
   const HourlyForecast({super.key});

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:weather_app/widgets/five_day_forecast.dart';
-import 'package:weather_app/widgets/hourly_forecast.dart';
-import 'package:weather_app/widgets/location.dart';
-import 'package:weather_app/widgets/main_weather_card.dart';
-import 'package:weather_app/widgets/sub_weather_card.dart';
+import 'package:weather_app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
