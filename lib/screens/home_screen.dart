@@ -21,9 +21,9 @@ class HomeScreen extends StatelessWidget {
           physics: AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
-              MainWeatherCard(),
+              MainWeatherInfo(),
               Gap(10),
-              SubWeatherCard(),
+              SubWeatherInfo(),
               Gap(10),
               HourlyForecast(),
               Gap(10),

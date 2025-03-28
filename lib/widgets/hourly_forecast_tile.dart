@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:weather_app/data/model/models.dart';
 import 'package:weather_app/utils/extension.dart';
+import 'package:weather_app/utils/helper.dart';
 
 class HourlyForecastTile extends StatelessWidget {
-  const HourlyForecastTile({super.key});
+  const HourlyForecastTile({
+    super.key,
+    required this.hourlyWeather,
+    required this.isNow,
+  });
+
+  final HourlyWeather hourlyWeather;
+  final bool isNow;
 
   @override
   Widget build(BuildContext context) {
@@ -11,25 +20,28 @@ class HourlyForecastTile extends StatelessWidget {
     final deviceSize = context.deviceSize;
 
     return Card(
+      color: isNow ? context.colorScheme.primaryContainer : null,
       child: Container(
         width: deviceSize.width * 0.4,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'lib/assets/sun.png',
+              Helper.getWeatherIcon(
+                  hourlyWeather.iconCode, hourlyWeather.isDay),
               height: 50,
             ),
-            const Gap(20),
+            const Gap(15),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Hiện tại',
+                  isNow == true
+                      ? 'Hiện tại'
+                      : Helper.convertDateTo24HourTime(hourlyWeather.time),
                   style: textTheme.bodyMedium,
                 ),
                 Text(
-                  '21°C',
+                  '${hourlyWeather.temperature.round()}°C',
                   style: textTheme.bodyLarge,
                 )
               ],

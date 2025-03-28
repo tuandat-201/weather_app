@@ -1,5 +1,5 @@
-export 'main_weather_card.dart';
-export 'sub_weather_card.dart';
+export 'main_weather_info.dart';
+export 'sub_weather_info.dart';
 export 'location.dart';
 export 'info_weather_row.dart';
 export 'hourly_forecast.dart';
