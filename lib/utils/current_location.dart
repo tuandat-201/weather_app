@@ -1,13 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 
 Future<Position> getCurrentLocation() async {
-  bool serviceEnabled;
   LocationPermission permission;
-
-  serviceEnabled = await Geolocator.isLocationServiceEnabled();
-  if (!serviceEnabled) {
-    return Future.error('Chưa bật chức năng định vị');
-  }
 
   permission = await Geolocator.checkPermission();
 

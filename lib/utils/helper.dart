@@ -22,7 +22,7 @@ class Helper {
     if (date.hour != 0) {
       return DateFormat.Hm().format(date);
     } else {
-      return DateFormat('HH:mm (dd/MM)').format(date);
+      return DateFormat('HH:mm dd/MM').format(date);
     }
   }
 

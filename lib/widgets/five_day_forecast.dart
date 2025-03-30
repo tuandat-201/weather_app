@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:weather_app/blocs/five_day_forecast_bloc/five_day_forecast_bloc.dart';
+import 'package:weather_app/blocs/weather_bloc/weather_bloc.dart';
 import 'package:weather_app/utils/extension.dart';
 import 'package:weather_app/widgets/widgets.dart';
 
@@ -12,38 +12,9 @@ class FiveDayForecast extends StatelessWidget {
     final textTheme = context.textTheme;
     final deviceSize = context.deviceSize;
 
-    return BlocBuilder<FiveDayForecastBloc, FiveDayForecastState>(
+    return BlocBuilder<WeatherBloc, WeatherState>(
       builder: (context, state) {
-        late Widget content;
-
-        if (state is FiveDayForecastInitialState ||
-            state is FiveDayForecastLoadingState) {
-          content =
-              const Expanded(child: Center(child: CircularProgressIndicator()));
-        } else if (state is FiveDayForecastFailedState) {
-          content = Center(
-            child: Text(
-              'Có lỗi xảy ra',
-              style: textTheme.titleLarge,
-            ),
-          );
-        } else {
-          final fiveDayForecast =
-              (state as FiveDayForecastSuccessState).fiveDayWeather;
-
-          content = Expanded(
-            child: ListView.separated(
-              itemCount: fiveDayForecast.length,
-              itemBuilder: (context, index) => FiveDayForecastTile(
-                weather: fiveDayForecast[index],
-                isNow: index == 0,
-              ),
-              separatorBuilder: (context, index) => const Divider(
-                thickness: 1,
-              ),
-            ),
-          );
-        }
+        final fiveDayWeather = (state as WeatherSuccessState).fiveDayWeather;
 
         return Card(
           child: Container(
@@ -63,7 +34,18 @@ class FiveDayForecast extends StatelessWidget {
                   ],
                 ),
                 const Gap(5),
-                content,
+                Expanded(
+                  child: ListView.separated(
+                    itemCount: fiveDayWeather.length,
+                    itemBuilder: (context, index) => FiveDayForecastTile(
+                      weather: fiveDayWeather[index],
+                      isNow: index == 0,
+                    ),
+                    separatorBuilder: (context, index) => const Divider(
+                      thickness: 1,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

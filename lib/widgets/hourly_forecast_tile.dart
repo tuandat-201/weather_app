@@ -23,6 +23,7 @@ class HourlyForecastTile extends StatelessWidget {
       color: isNow ? context.colorScheme.primaryContainer : null,
       child: Container(
         width: deviceSize.width * 0.4,
+        padding: const EdgeInsets.only(left: 5),
         child: Row(
           children: [
             Image.asset(
@@ -33,6 +34,7 @@ class HourlyForecastTile extends StatelessWidget {
             const Gap(15),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   isNow == true

@@ -15,20 +15,17 @@ class WeatherRepositoryImpl implements WeatherRepository {
 
   WeatherRepositoryImpl(this._dataProvider);
 
-  Future<void> _loadData() async {
+  Future<void> loadData() async {
     _rawData ??= await _dataProvider.fetchData();
   }
 
   @override
   Future<CurrentWeather> getCurrentWeather() async {
-    await _loadData();
     return CurrentWeather.fromMap(_rawData!);
   }
 
   @override
   Future<List<HourlyWeather>> getHourlyWeather() async {
-    await _loadData();
-
     final currentWeather = await getCurrentWeather();
     final List<HourlyWeather> hourlyWeatherList = [
       HourlyWeather.fromCurrentWeather(currentWeather)
@@ -54,8 +51,6 @@ class WeatherRepositoryImpl implements WeatherRepository {
 
   @override
   Future<List<WeatherOfDay>> getFiveDayWeather() async {
-    await _loadData();
-
     final listForecast = _rawData!['forecast']['forecastday'] as List<dynamic>;
 
     return listForecast
