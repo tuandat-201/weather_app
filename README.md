@@ -1,16 +1,9 @@
-# weather_app
+## Mô tả
 
-A new Flutter project.
+Ứng dụng Weather Forecast giúp dự báo thời tiết dựa trên vị trí hiện tại của người dùng. Ứng dụng cho biết thời tiết hiện tại, dự báo thời tiết trong 24 giờ và 5 ngày sắp tới.
 
-## Getting Started
+Ứng dụng được viết bằng Flutter, sử dụng Bloc để quản lý state, dữ liệu được lấy từ API của Weatherapi.com
 
-This project is a starting point for a Flutter application.
+## Demo
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Demo](demo.gif)
