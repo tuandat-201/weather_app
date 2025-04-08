@@ -13,9 +13,6 @@ class Location extends StatelessWidget {
     return BlocBuilder<WeatherBloc, WeatherState>(
       builder: (context, state) {
         final currentWeather = (state as WeatherSuccessState).currentWeather;
-
-        print(currentWeather);
-
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

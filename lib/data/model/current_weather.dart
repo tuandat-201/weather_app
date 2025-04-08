@@ -35,12 +35,12 @@ class CurrentWeather {
   }
 
   factory CurrentWeather.fromMap(Map<String, dynamic> map) {
-    final forecast_day = map['forecast']['forecastday'][0];
+    final forecastDay = map['forecast']['forecastday'][0];
 
-    final minTemperature = forecast_day['day']['mintemp_c'] as double;
-    final maxTemperature = forecast_day['day']['maxtemp_c'] as double;
-    final sunrise = forecast_day['astro']['sunrise'] as String;
-    final sunset = forecast_day['astro']['sunset'] as String;
+    final minTemperature = forecastDay['day']['mintemp_c'] as double;
+    final maxTemperature = forecastDay['day']['maxtemp_c'] as double;
+    final sunrise = forecastDay['astro']['sunrise'] as String;
+    final sunset = forecastDay['astro']['sunset'] as String;
 
     return CurrentWeather(
       location: map['location']['name'] as String,

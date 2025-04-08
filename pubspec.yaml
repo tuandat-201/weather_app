@@ -41,6 +41,7 @@ dependencies:
   intl: ^0.20.2
   equatable: ^2.0.7
   flutter_bloc: ^9.1.0
+  bloc: ^9.0.0
 
 dev_dependencies:
   flutter_test:
@@ -65,21 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/_cloud_day.png
-    - lib/assets/_cloud_night.png
-    - lib/assets/_light_rain_day.png
-    - lib/assets/_light_rain_night.png
-    - lib/assets/_mist.png
-    - lib/assets/_night.png
-    - lib/assets/_snow_day.png
-    - lib/assets/_snow_night.png
-    - lib/assets/_storm_day.png
-    - lib/assets/_storm_night.png
-    - lib/assets/_sun.png
-    - lib/assets/sunrise.png
-    - lib/assets/sunset.png
-    - lib/assets/warm.png
-    - lib/assets/cold.png
+    - lib/assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

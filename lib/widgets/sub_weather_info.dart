@@ -43,7 +43,7 @@ class SubWeatherInfo extends StatelessWidget {
         InfoWeatherRow(
           title: 'Bình Minh',
           image: 'lib/assets/sunrise.png',
-          info: '${Helper.convertTimeTo24HourTime(weather.sunrise)}',
+          info: Helper.convertTimeTo24HourTime(weather.sunrise),
         ),
         const Divider(
           thickness: 1,
@@ -51,7 +51,7 @@ class SubWeatherInfo extends StatelessWidget {
         InfoWeatherRow(
           title: 'Hoàng Hôn',
           image: 'lib/assets/sunset.png',
-          info: '${Helper.convertTimeTo24HourTime(weather.sunset)}',
+          info: Helper.convertTimeTo24HourTime(weather.sunset),
         ),
       ],
     );

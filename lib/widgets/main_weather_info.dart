@@ -20,7 +20,7 @@ class MainWeatherInfo extends StatelessWidget {
         final currentWeather = (state as WeatherSuccessState).currentWeather;
 
         return Card(
-          child: Container(
+          child: SizedBox(
             width: deviceSize.width,
             height: deviceSize.height * 0.35,
             child: Column(
@@ -41,7 +41,7 @@ class MainWeatherInfo extends StatelessWidget {
                 ),
                 const Gap(10),
                 Text(
-                  '${currentWeather.description}',
+                  currentWeather.description,
                   // textAlign: TextAlign.center,
                   style: textTheme.titleLarge!.copyWith(
                     fontSize: 24,
